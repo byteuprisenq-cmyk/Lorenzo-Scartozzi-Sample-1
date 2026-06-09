@@ -1,0 +1,1516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lorenzo Scartozzi — Real Estate Professional | NZ Sotheby's International Realty</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --navy: #0d1f3c;
+  --navy-mid: #112347;
+  --navy-light: #1a3260;
+  --amber: #c9974a;
+  --amber-light: #d9aa64;
+  --white: #ffffff;
+  --off-white: #f8f7f4;
+  --text-dark: #1a1a2e;
+  --text-mid: #4a5568;
+  --text-light: #8892a4;
+  --border-light: #e8e4dd;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--white);
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* ─── TOP UTILITY BAR ─── */
+.top-bar {
+  background: var(--navy);
+  padding: 0 48px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.top-bar-brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+.top-bar-brand .brand-main {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--white);
+  letter-spacing: 0.02em;
+}
+.top-bar-brand .brand-sub {
+  font-size: 8px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-top: 2px;
+}
+.top-bar-nav {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+.top-bar-nav a {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.top-bar-nav a:hover { color: var(--white); }
+.top-bar-cta {
+  border: 1px solid var(--white);
+  color: var(--white) !important;
+  padding: 8px 20px;
+  font-size: 11px !important;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: background 0.2s !important;
+}
+.top-bar-cta:hover {
+  background: var(--white);
+  color: var(--navy) !important;
+}
+
+/* ─── STICKY AGENT NAV ─── */
+.agent-nav {
+  background: var(--white);
+  border-bottom: 1px solid var(--border-light);
+  padding: 0 48px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 40px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 1px 12px rgba(0,0,0,0.06);
+}
+.agent-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+.agent-nav-links a {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--navy);
+  text-decoration: none;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+.agent-nav-links a:hover,
+.agent-nav-links a.active {
+  color: var(--navy);
+  border-bottom-color: var(--amber);
+}
+.agent-nav-connect {
+  border: 1px solid var(--navy);
+  color: var(--navy);
+  padding: 9px 22px;
+  font-size: 11px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.agent-nav-connect:hover {
+  background: var(--navy);
+  color: var(--white);
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  margin-left: auto;
+}
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--navy);
+}
+
+/* ─── HERO ─── */
+.hero {
+  background: var(--navy);
+  min-height: calc(100vh - 108px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-left {
+  padding: 80px 64px 80px 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+.hero-tag-line {
+  width: 28px;
+  height: 1px;
+  background: var(--amber);
+}
+.hero-tag-text {
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--amber);
+  font-weight: 500;
+}
+
+.hero-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(44px, 5.5vw, 76px);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin-bottom: 16px;
+}
+
+.hero-role {
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+.hero-bio-short {
+  font-size: 15px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.65);
+  font-weight: 300;
+  max-width: 420px;
+  margin-bottom: 52px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-white-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(255,255,255,0.4);
+  color: var(--white);
+  padding: 14px 32px;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-decoration: none;
+  transition: border-color 0.25s, background 0.25s;
+  font-family: 'Inter', sans-serif;
+}
+.btn-white-outline:hover {
+  border-color: var(--white);
+  background: rgba(255,255,255,0.08);
+}
+.btn-white-outline .arrow {
+  font-size: 16px;
+  transition: transform 0.2s;
+}
+.btn-white-outline:hover .arrow { transform: translateX(4px); }
+
+.btn-amber {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--amber);
+  color: var(--white);
+  padding: 14px 32px;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.2s;
+}
+.btn-amber:hover { background: var(--amber-light); }
+
+/* Hero photo */
+.hero-right {
+  position: relative;
+  overflow: hidden;
+}
+.hero-photo-wrap {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+.hero-photo-bg {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 520px;
+  height: 580px;
+  background: rgba(255,255,255,0.04);
+}
+.hero-photo-frame {
+  position: absolute;
+  bottom: 0;
+  right: 60px;
+  width: 460px;
+  height: 560px;
+  overflow: hidden;
+}
+.hero-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(160deg, #1e3a6e 0%, #162d56 60%, #0d1f3c 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 40px;
+  gap: 8px;
+}
+.hero-photo-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  position: absolute;
+  top: 0; left: 0;
+}
+.photo-hint {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+  position: relative;
+  z-index: 1;
+}
+.hero-photo-accent {
+  position: absolute;
+  bottom: 48px;
+  left: -2px;
+  width: 3px;
+  height: 120px;
+  background: var(--amber);
+}
+
+/* Quick contact strip */
+.hero-contact-strip {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 50%;
+  background: rgba(255,255,255,0.06);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 18px 72px;
+  display: flex;
+  gap: 40px;
+  z-index: 3;
+}
+.qc-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.qc-label {
+  font-size: 8px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+.qc-value {
+  font-size: 13px;
+  color: rgba(255,255,255,0.8);
+  font-weight: 300;
+}
+.qc-value a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.qc-value a:hover { color: var(--amber); }
+
+/* ─── ABOUT SECTION ─── */
+.about-section {
+  background: var(--white);
+  padding: 100px 72px;
+}
+.about-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 100px;
+  align-items: start;
+}
+.about-label {
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+.about-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 3.5vw, 48px);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--navy);
+  margin-bottom: 32px;
+}
+.about-heading em {
+  font-style: italic;
+  color: var(--navy);
+}
+.about-text p {
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--text-mid);
+  font-weight: 300;
+  margin-bottom: 18px;
+}
+.about-text p strong {
+  font-weight: 500;
+  color: var(--navy);
+}
+.about-divider {
+  width: 48px;
+  height: 2px;
+  background: var(--amber);
+  margin: 36px 0;
+}
+.passion-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--border-light);
+  margin-top: 8px;
+}
+.passion-item {
+  padding: 16px 20px;
+  border-right: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  font-size: 13px;
+  color: var(--text-mid);
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.passion-item:nth-child(even) { border-right: none; }
+.passion-item:nth-last-child(-n+2) { border-bottom: none; }
+.passion-dot {
+  width: 5px;
+  height: 5px;
+  background: var(--amber);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* About right: photo + credentials */
+.about-right { }
+.about-photo-frame {
+  width: 100%;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  position: relative;
+  background: #e8ecf2;
+  margin-bottom: 32px;
+}
+.about-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+.about-photo-inner {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(160deg, #dde4ef 0%, #c8d2e3 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+}
+.about-photo-monogram {
+  font-family: 'Playfair Display', serif;
+  font-size: 80px;
+  font-weight: 400;
+  color: rgba(13,31,60,0.15);
+  line-height: 1;
+}
+.about-photo-hint {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(13,31,60,0.25);
+}
+.about-credentials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--border-light);
+}
+.cred-item {
+  padding: 20px 24px;
+  border-right: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+.cred-item:nth-child(even) { border-right: none; }
+.cred-item:nth-last-child(-n+2) { border-bottom: none; }
+.cred-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: 5px;
+}
+.cred-label {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  font-weight: 400;
+}
+
+/* ─── WHAT I DO ─── */
+.services-section {
+  background: var(--navy);
+  padding: 100px 72px;
+}
+.services-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+.services-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: end;
+  margin-bottom: 64px;
+}
+.services-label {
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+.services-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 3.5vw, 44px);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.15;
+}
+.services-heading em { font-style: italic; }
+.services-sub {
+  font-size: 14px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.5);
+  font-weight: 300;
+  align-self: end;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.service-card {
+  padding: 44px 36px;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  transition: background 0.3s;
+  position: relative;
+}
+.service-card:last-child { border-right: none; }
+.service-card:hover { background: rgba(255,255,255,0.03); }
+.service-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 36px; right: 36px;
+  height: 1px;
+  background: rgba(255,255,255,0.05);
+}
+.service-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 13px;
+  color: var(--amber);
+  opacity: 0.7;
+  margin-bottom: 24px;
+}
+.service-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+.service-desc {
+  font-size: 13px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.45);
+  font-weight: 300;
+}
+
+/* ─── PROPERTIES ─── */
+.properties-section {
+  background: var(--off-white);
+  padding: 100px 72px;
+}
+.properties-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+.section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 52px;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.section-label {
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 400;
+  color: var(--navy);
+  line-height: 1.1;
+}
+.section-title em { font-style: italic; }
+.view-all-link {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--navy);
+  text-decoration: none;
+  border-bottom: 1px solid var(--amber);
+  padding-bottom: 3px;
+  font-weight: 500;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+.view-all-link:hover { color: var(--amber); }
+.properties-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+.prop-card {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.prop-card:hover {
+  box-shadow: 0 12px 40px rgba(13,31,60,0.1);
+  transform: translateY(-3px);
+}
+.prop-image {
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  position: relative;
+  background: #dde3ed;
+}
+.prop-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.prop-card:hover .prop-image img { transform: scale(1.04); }
+.prop-image-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #c8d2e2, #dde3ed, #c8d2e2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.prop-placeholder-icon {
+  font-size: 40px;
+  opacity: 0.3;
+}
+.prop-placeholder-text {
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(13,31,60,0.3);
+}
+.prop-badge {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  background: var(--navy);
+  color: var(--white);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 6px 14px;
+}
+.prop-body {
+  padding: 28px 28px 24px;
+}
+.prop-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.prop-address {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 3px;
+}
+.prop-location {
+  font-size: 12px;
+  color: var(--text-light);
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+.prop-features {
+  display: flex;
+  gap: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-light);
+}
+.prop-feat {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  color: var(--text-mid);
+}
+.prop-feat-dot {
+  width: 4px;
+  height: 4px;
+  background: var(--amber);
+  border-radius: 50%;
+}
+
+/* ─── QUOTE ─── */
+.quote-section {
+  background: var(--white);
+  padding: 80px 72px;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+.quote-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.quote-mark-top {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  line-height: 0.6;
+  color: var(--amber);
+  opacity: 0.4;
+  display: block;
+  margin-bottom: 28px;
+}
+.quote-text {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--navy);
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+.quote-name {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
+/* ─── NETWORK ─── */
+.network-section {
+  background: var(--off-white);
+  padding: 80px 72px;
+}
+.network-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
+  align-items: center;
+}
+.network-left { }
+.network-right {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid var(--border-light);
+}
+.net-stat {
+  padding: 36px 32px;
+  border-right: 1px solid var(--border-light);
+  text-align: center;
+}
+.net-stat:last-child { border-right: none; }
+.net-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 44px;
+  font-weight: 400;
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.net-label {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
+/* ─── CONTACT ─── */
+.contact-section {
+  background: var(--navy);
+  padding: 100px 72px;
+}
+.contact-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 80px;
+  align-items: start;
+}
+.contact-left { }
+.contact-label {
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+.contact-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 3.5vw, 44px);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+.contact-heading em { font-style: italic; }
+.contact-subtext {
+  font-size: 14px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.5);
+  font-weight: 300;
+  margin-bottom: 48px;
+  max-width: 380px;
+}
+.contact-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.cd-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.cd-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255,255,255,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.cd-icon-wrap svg {
+  width: 15px;
+  height: 15px;
+  stroke: var(--amber);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.cd-info-label {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 3px;
+}
+.cd-info-value {
+  font-size: 14px;
+  color: rgba(255,255,255,0.8);
+  font-weight: 300;
+}
+.cd-info-value a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.cd-info-value a:hover { color: var(--amber); }
+.offices-list {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.office-row {
+  padding: 16px 18px;
+  border: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.office-amber-bar {
+  width: 2px;
+  height: 36px;
+  background: var(--amber);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.office-name {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 5px;
+}
+.office-addr {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+/* ─── FORM ─── */
+.contact-form { }
+.form-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--white);
+  margin-bottom: 32px;
+}
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.form-field { margin-bottom: 18px; }
+.form-lbl {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 8px;
+}
+.form-inp, .form-ta {
+  width: 100%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--white);
+  padding: 13px 15px;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  resize: none;
+}
+.form-inp:focus, .form-ta:focus {
+  border-color: rgba(201,151,74,0.6);
+  background: rgba(255,255,255,0.07);
+}
+.form-inp::placeholder, .form-ta::placeholder {
+  color: rgba(255,255,255,0.18);
+}
+.form-submit {
+  width: 100%;
+  background: var(--amber);
+  color: var(--white);
+  border: none;
+  padding: 16px;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.2s;
+  margin-top: 6px;
+}
+.form-submit:hover { background: var(--amber-light); }
+.form-note {
+  font-size: 11px;
+  color: rgba(255,255,255,0.2);
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+/* ─── FOOTER ─── */
+footer {
+  background: #0a1830;
+  padding: 28px 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.footer-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.04em;
+}
+.footer-mid {
+  font-size: 11px;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+.footer-right {
+  font-size: 10px;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ─── MOBILE ─── */
+.mobile-drawer {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--navy);
+  z-index: 200;
+  flex-direction: column;
+  padding: 48px 32px;
+  gap: 28px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.mobile-drawer.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.mobile-close-btn {
+  background: none; border: none;
+  color: var(--white); font-size: 24px;
+  cursor: pointer; align-self: flex-end;
+  margin-bottom: 16px;
+}
+.mobile-drawer a {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px; font-weight: 400;
+  color: var(--white); text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding-bottom: 20px;
+  transition: color 0.2s;
+}
+.mobile-drawer a:hover { color: var(--amber); }
+
+/* Scroll fade-in */
+.fade-in { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.fade-in.visible { opacity: 1; transform: none; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1024px) {
+  .top-bar { padding: 0 24px; }
+  .top-bar-nav { display: none; }
+  .agent-nav { padding: 0 24px; }
+  .agent-nav-links { display: none; }
+  .agent-nav-connect { display: none; }
+  .hamburger { display: flex; }
+  .mobile-drawer { display: flex; }
+
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-left { padding: 80px 32px 40px; }
+  .hero-right { height: 420px; }
+  .hero-contact-strip { right: 0; padding: 16px 32px; }
+
+  .about-inner { grid-template-columns: 1fr; gap: 48px; padding: 0; }
+  .about-section { padding: 72px 32px; }
+  .services-section { padding: 72px 32px; }
+  .services-header { grid-template-columns: 1fr; gap: 16px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .service-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .service-card:last-child { border-bottom: none; }
+
+  .properties-section { padding: 72px 32px; }
+  .properties-grid { grid-template-columns: 1fr; }
+
+  .network-section { padding: 72px 32px; }
+  .network-inner { grid-template-columns: 1fr; gap: 40px; }
+  .network-right { grid-template-columns: 1fr; }
+  .net-stat { border-right: none; border-bottom: 1px solid var(--border-light); }
+  .net-stat:last-child { border-bottom: none; }
+
+  .contact-section { padding: 72px 32px; }
+  .contact-inner { grid-template-columns: 1fr; gap: 56px; }
+
+  footer { padding: 24px 32px; }
+  .quote-section { padding: 64px 32px; }
+}
+
+@media (max-width: 640px) {
+  .top-bar { padding: 0 16px; height: 48px; }
+  .hero-left { padding: 64px 20px 32px; }
+  .hero-contact-strip { flex-direction: column; gap: 12px; padding: 16px 20px; }
+  .hero-name { font-size: 42px; }
+  .about-section, .services-section, .properties-section,
+  .network-section, .contact-section, .quote-section { padding: 64px 20px; }
+  footer { padding: 20px; flex-direction: column; text-align: center; }
+  .footer-mid { order: -1; }
+  .form-grid-2 { grid-template-columns: 1fr; }
+  .cred-item { padding: 14px 16px; }
+  .net-stat { padding: 24px 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Mobile drawer -->
+<div class="mobile-drawer" id="mobileDrawer">
+  <button class="mobile-close-btn" id="mobileCloseBtn">✕</button>
+  <a href="#top" onclick="closeDrawer()">Home</a>
+  <a href="#story" onclick="closeDrawer()">My Story</a>
+  <a href="#properties" onclick="closeDrawer()">Properties</a>
+  <a href="#contact" onclick="closeDrawer()">Connect With Me</a>
+</div>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="top-bar-brand">
+    <span class="brand-main">Sotheby's</span>
+    <span class="brand-sub">International Realty</span>
+  </div>
+  <nav class="top-bar-nav">
+    <a href="#properties">Properties</a>
+    <a href="#story">Agents</a>
+    <a href="#contact">Connect</a>
+    <a href="#contact" class="top-bar-cta">Sell With Us</a>
+  </nav>
+</div>
+
+<!-- AGENT NAV -->
+<div class="agent-nav" id="agentNav">
+  <ul class="agent-nav-links">
+    <li><a href="#top" class="active">Top</a></li>
+    <li><a href="#story">My Story</a></li>
+    <li><a href="#properties">Properties</a></li>
+  </ul>
+  <a href="#contact" class="agent-nav-connect">Connect With Me</a>
+  <div class="hamburger" id="hamburgerBtn">
+    <span></span><span></span><span></span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-left">
+    <div class="hero-tag">
+      <span class="hero-tag-line"></span>
+      <span class="hero-tag-text">NZ Sotheby's International Realty</span>
+    </div>
+    <h1 class="hero-name">Lorenzo<br>Scartozzi</h1>
+    <p class="hero-role">Real Estate Professional</p>
+    <p class="hero-bio-short">
+      Bringing Italian passion and charisma to the Waikato property market — with an unmatched understanding of the local landscape and an unwavering commitment to exceptional results.
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-white-outline">Send Message <span class="arrow">→</span></a>
+      <a href="#properties" class="btn-amber">View Properties</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-photo-frame">
+      <div class="hero-photo-placeholder">
+        <!-- Replace with: <img src="lorenzo-photo.jpg" alt="Lorenzo Scartozzi"> -->
+        <span class="photo-hint">Agent Photo</span>
+      </div>
+      <div class="hero-photo-accent"></div>
+    </div>
+  </div>
+  <div class="hero-contact-strip">
+    <div class="qc-item">
+      <span class="qc-label">Mobile</span>
+      <span class="qc-value"><a href="tel:+64274363531">+64 27 436 3531</a></span>
+    </div>
+    <div class="qc-item">
+      <span class="qc-label">Office</span>
+      <span class="qc-value"><a href="tel:+6474640184">+64 7 464 0184</a></span>
+    </div>
+    <div class="qc-item">
+      <span class="qc-label">Email</span>
+      <span class="qc-value"><a href="mailto:lorenzo.scartozzi@sothebysrealty.com">lorenzo.scartozzi@sothebysrealty.com</a></span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="story">
+  <div class="about-inner">
+    <div class="about-text fade-in">
+      <p class="about-label">My Story</p>
+      <h2 class="about-heading">Local Expertise.<br><em>Global Connections.</em></h2>
+      <p>Lorenzo Scartozzi is a distinguished real estate professional renowned for infusing <strong>passion and charisma</strong> into every property transaction. With an innate ability to secure premium outcomes, Lorenzo is your key to unlocking exceptional results in the Waikato market.</p>
+      <p>Originally from <strong>Italy</strong>, Lorenzo has seamlessly woven his life into the fabric of Waikato. His unique background in the <strong>equestrian industry</strong> — managing stallions across the region — enhances his understanding of the local landscape and adds an extra layer of expertise to his real estate ventures.</p>
+      <p>Lorenzo's love for Waikato stems from its expansive green spaces, tranquil surroundings, and the warmth of its people. His meticulous attention to detail and strong management skills set him apart, ensuring success without compromise.</p>
+      <div class="about-divider"></div>
+      <p style="font-size:13px; color:var(--text-light); margin-bottom:12px; font-style:italic;">Outside of real estate, Lorenzo is a man of many interests:</p>
+      <div class="passion-grid">
+        <div class="passion-item"><span class="passion-dot"></span>Football</div>
+        <div class="passion-item"><span class="passion-dot"></span>Snowboarding</div>
+        <div class="passion-item"><span class="passion-dot"></span>Fishing</div>
+        <div class="passion-item"><span class="passion-dot"></span>Finance & Economics</div>
+      </div>
+    </div>
+    <div class="about-right fade-in" style="transition-delay:0.15s;">
+      <div class="about-photo-frame">
+        <!-- Replace inner div with: <img src="lorenzo-photo.jpg" alt="Lorenzo Scartozzi"> -->
+        <div class="about-photo-inner">
+          <div class="about-photo-monogram">LS</div>
+          <p class="about-photo-hint">Agent Headshot</p>
+        </div>
+      </div>
+      <div class="about-credentials">
+        <div class="cred-item">
+          <div class="cred-value">1,100</div>
+          <div class="cred-label">Offices Worldwide</div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-value">86</div>
+          <div class="cred-label">Countries</div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-value">26K</div>
+          <div class="cred-label">Sales Associates</div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-value">EN/IT</div>
+          <div class="cred-label">Languages</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section">
+  <div class="services-inner">
+    <div class="services-header fade-in">
+      <div>
+        <p class="services-label">What I Offer</p>
+        <h2 class="services-heading">A Distinct Approach<br>to Every <em>Transaction</em></h2>
+      </div>
+      <p class="services-sub">Combining deep local knowledge with the global reach of Sotheby's International Realty — your property deserves both.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-in" style="transition-delay:0.05s;">
+        <div class="service-num">01</div>
+        <h3 class="service-title">Local Market Mastery</h3>
+        <p class="service-desc">Years of lived experience across the Waikato region, from Hamilton's suburbs to expansive rural estates. Lorenzo knows this land because he calls it home.</p>
+      </div>
+      <div class="service-card fade-in" style="transition-delay:0.1s;">
+        <div class="service-num">02</div>
+        <h3 class="service-title">Global Network Access</h3>
+        <p class="service-desc">As part of Sotheby's International Realty, your property is connected to over 26,000 sales associates across 86 countries and 1,100 offices worldwide.</p>
+      </div>
+      <div class="service-card fade-in" style="transition-delay:0.15s;">
+        <div class="service-num">03</div>
+        <h3 class="service-title">Premium Outcomes</h3>
+        <p class="service-desc">Meticulous attention to detail, sharp pricing strategy, and skilled negotiation — Lorenzo's track record is built on delivering results that exceed expectations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROPERTIES -->
+<section class="properties-section" id="properties">
+  <div class="properties-inner">
+    <div class="section-header fade-in">
+      <div>
+        <p class="section-label">Current Listings</p>
+        <h2 class="section-title">Featured <em>Properties</em></h2>
+      </div>
+      <a href="#contact" class="view-all-link">Enquire About Listings</a>
+    </div>
+    <div class="properties-grid">
+      <div class="prop-card fade-in" style="transition-delay:0.05s;">
+        <div class="prop-image">
+          <!-- Replace with: <img src="property-photo.jpg" alt="278 Stokes Road"> -->
+          <div class="prop-image-placeholder">
+            <div class="prop-placeholder-icon">🏡</div>
+            <div class="prop-placeholder-text">Property Photography</div>
+          </div>
+          <div class="prop-badge">For Sale</div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-price">Price Upon Request</div>
+          <div class="prop-address">278 Stokes Road</div>
+          <div class="prop-location">Waikato, 3494 — New Zealand</div>
+          <div class="prop-features">
+            <div class="prop-feat"><span class="prop-feat-dot"></span>4 Bedrooms</div>
+            <div class="prop-feat"><span class="prop-feat-dot"></span>2 Full Bathrooms</div>
+          </div>
+        </div>
+      </div>
+      <div class="prop-card fade-in" style="transition-delay:0.1s; opacity: 0.4; pointer-events:none;">
+        <div class="prop-image">
+          <div class="prop-image-placeholder">
+            <div class="prop-placeholder-icon">🌿</div>
+            <div class="prop-placeholder-text">More listings coming soon</div>
+          </div>
+        </div>
+        <div class="prop-body">
+          <div class="prop-price" style="color:var(--text-light);">Upcoming</div>
+          <div class="prop-address" style="color:var(--text-light);">Waikato Region</div>
+          <div class="prop-location">Contact Lorenzo for details</div>
+          <div class="prop-features">
+            <div class="prop-feat"><span class="prop-feat-dot"></span>Enquire directly</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<div class="quote-section fade-in">
+  <div class="quote-inner">
+    <span class="quote-mark-top">"</span>
+    <p class="quote-text">Connect with Lorenzo to infuse your next real estate journey with a touch of Italian flair — whether you are selling or buying, a seamless and successful experience awaits.</p>
+    <p class="quote-name">Lorenzo Scartozzi — Real Estate Professional, Waikato</p>
+  </div>
+</div>
+
+<!-- NETWORK -->
+<section class="network-section">
+  <div class="network-inner">
+    <div class="fade-in">
+      <p class="section-label">The Network</p>
+      <h2 class="section-title" style="font-size:clamp(26px,2.8vw,36px);">Sotheby's<br>International<br><em>Realty</em></h2>
+      <div style="width:40px;height:2px;background:var(--amber);margin:24px 0;"></div>
+      <p style="font-size:13px;line-height:1.8;color:var(--text-mid);font-weight:300;max-width:280px;">Founded in 1976. Associated with Sotheby's auction house established in 1744. Your property, presented to the world's most prestigious clientele.</p>
+    </div>
+    <div class="network-right fade-in" style="transition-delay:0.1s;">
+      <div class="net-stat">
+        <div class="net-value">1,100</div>
+        <div class="net-label">Offices Worldwide</div>
+      </div>
+      <div class="net-stat">
+        <div class="net-value">86</div>
+        <div class="net-label">Countries & Territories</div>
+      </div>
+      <div class="net-stat">
+        <div class="net-value">26K+</div>
+        <div class="net-label">Sales Associates</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="contact-left fade-in">
+      <p class="contact-label">Get In Touch</p>
+      <h2 class="contact-heading">Let's Talk<br><em>Real Estate</em></h2>
+      <p class="contact-subtext">Ready to buy, sell, or just explore your options in the Waikato? Lorenzo is here to guide you every step of the way.</p>
+      <div class="contact-details-list">
+        <div class="cd-row">
+          <div class="cd-icon-wrap">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1-1a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          </div>
+          <div>
+            <div class="cd-info-label">Mobile</div>
+            <div class="cd-info-value"><a href="tel:+64274363531">+64 27 436 3531</a></div>
+          </div>
+        </div>
+        <div class="cd-row">
+          <div class="cd-icon-wrap">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1-1a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          </div>
+          <div>
+            <div class="cd-info-label">Office</div>
+            <div class="cd-info-value"><a href="tel:+6474640184">+64 7 464 0184</a></div>
+          </div>
+        </div>
+        <div class="cd-row">
+          <div class="cd-icon-wrap">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </div>
+          <div>
+            <div class="cd-info-label">Email</div>
+            <div class="cd-info-value"><a href="mailto:lorenzo.scartozzi@sothebysrealty.com">lorenzo.scartozzi@sothebysrealty.com</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="offices-list">
+        <div class="office-row">
+          <div class="office-amber-bar"></div>
+          <div>
+            <div class="office-name">Tamahere Village</div>
+            <div class="office-addr">65 Devine Road, Tamahere Village<br>Hamilton, Waikato 3283</div>
+          </div>
+        </div>
+        <div class="office-row">
+          <div class="office-amber-bar"></div>
+          <div>
+            <div class="office-name">Cambridge</div>
+            <div class="office-addr">79 Victoria Street<br>Cambridge, Waikato 3434</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form fade-in" style="transition-delay:0.15s;">
+      <p class="form-title">Send a message</p>
+      <div class="form-grid-2">
+        <div class="form-field">
+          <label class="form-lbl">First Name</label>
+          <input type="text" class="form-inp" placeholder="Your first name">
+        </div>
+        <div class="form-field">
+          <label class="form-lbl">Last Name</label>
+          <input type="text" class="form-inp" placeholder="Your last name">
+        </div>
+      </div>
+      <div class="form-field">
+        <label class="form-lbl">Email Address</label>
+        <input type="email" class="form-inp" placeholder="you@email.com">
+      </div>
+      <div class="form-field">
+        <label class="form-lbl">Phone (optional)</label>
+        <input type="tel" class="form-inp" placeholder="+64 ...">
+      </div>
+      <div class="form-field">
+        <label class="form-lbl">How can I help?</label>
+        <textarea class="form-ta" rows="5" placeholder="I'd like to discuss buying / selling / renting in the Waikato..."></textarea>
+      </div>
+      <button class="form-submit" id="formSubmitBtn">Send Message</button>
+      <p class="form-note">By submitting, you agree to be contacted by Lorenzo Scartozzi, NZ Sotheby's International Realty. Your information is handled in accordance with their Privacy Policy.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Lorenzo Scartozzi</div>
+  <div class="footer-mid">New Zealand Sotheby's International Realty &nbsp;·&nbsp; Waikato</div>
+  <div class="footer-right">© 2026 Sotheby's International Realty</div>
+</footer>
+
+<script>
+  // Mobile drawer
+  const drawer = document.getElementById('mobileDrawer');
+  document.getElementById('hamburgerBtn').addEventListener('click', () => drawer.classList.add('open'));
+  document.getElementById('mobileCloseBtn').addEventListener('click', () => drawer.classList.remove('open'));
+  function closeDrawer() { drawer.classList.remove('open'); }
+
+  // Sticky nav active link highlight
+  const navLinks = document.querySelectorAll('.agent-nav-links a');
+  const sections = ['top','story','properties','contact'].map(id => document.getElementById(id));
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(sec => {
+      if (sec && window.scrollY >= sec.offsetTop - 120) current = sec.id;
+    });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  });
+
+  // Scroll reveal
+  const fadeEls = document.querySelectorAll('.fade-in');
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  fadeEls.forEach(el => revealObserver.observe(el));
+
+  // Form submit
+  document.getElementById('formSubmitBtn').addEventListener('click', function() {
+    const btn = this;
+    btn.textContent = 'Message Sent ✓';
+    btn.style.background = '#5a7a5a';
+    setTimeout(() => {
+      btn.textContent = 'Send Message';
+      btn.style.background = '';
+    }, 3500);
+  });
+</script>
+</body>
+</html>
