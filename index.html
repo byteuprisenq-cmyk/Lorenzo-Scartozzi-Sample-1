@@ -15,17 +15,21 @@
 }
 
 :root {
-  --navy: #0d1f3c;
-  --navy-mid: #112347;
-  --navy-light: #1a3260;
-  --amber: #c9974a;
-  --amber-light: #d9aa64;
+  --navy: #5f7f67;
+  --navy-mid: #6f9177;
+  --navy-light: #88a98f;
+
+  --amber: #9db59f;
+  --amber-light: #b8cbb9;
+
   --white: #ffffff;
-  --off-white: #f8f7f4;
-  --text-dark: #1a1a2e;
-  --text-mid: #4a5568;
-  --text-light: #8892a4;
-  --border-light: #e8e4dd;
+  --off-white: #f7faf7;
+
+  --text-dark: #243224;
+  --text-mid: #5f6d5f;
+  --text-light: #8b978b;
+
+  --border-light: #dfe7df;
 }
 
 html { scroll-behavior: smooth; }
@@ -307,7 +311,7 @@ body {
 .hero-photo-placeholder {
   width: 100%;
   height: 100%;
-  background: linear-gradient(160deg, #1e3a6e 0%, #162d56 60%, #0d1f3c 100%);
+  background: linear-gradient(160deg, #8aa78f 0%, #6f9177 60%, #5f7f67 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -473,7 +477,7 @@ body {
 .about-photo-inner {
   width: 100%;
   height: 100%;
-  background: linear-gradient(160deg, #dde4ef 0%, #c8d2e3 100%);
+  background: linear-gradient(160deg, #edf4ed 0%, #dce8dc 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -669,7 +673,7 @@ body {
   aspect-ratio: 16/10;
   overflow: hidden;
   position: relative;
-  background: #dde3ed;
+  background: #dfe9df;
 }
 .prop-image img {
   width: 100%;
@@ -681,7 +685,7 @@ body {
 .prop-image-placeholder {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #c8d2e2, #dde3ed, #c8d2e2);
+  background: linear-gradient(135deg, #d5e2d5, #e7f0e7, #d5e2d5);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1046,6 +1050,49 @@ footer {
   color: rgba(255,255,255,0.2);
   letter-spacing: 0.12em;
   text-transform: uppercase;
+}
+/* ─── WHATSAPP FLOAT ─── */
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 62px;
+  height: 62px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+  z-index: 999;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 14px 36px rgba(0,0,0,0.24);
+}
+
+.whatsapp-float svg {
+  width: 30px;
+  height: 30px;
+  fill: white;
+}
+
+@media (max-width: 640px) {
+  .whatsapp-float {
+    width: 56px;
+    height: 56px;
+    bottom: 18px;
+    right: 18px;
+  }
+
+  .whatsapp-float svg {
+    width: 26px;
+    height: 26px;
+  }
 }
 
 /* ─── MOBILE ─── */
@@ -1468,7 +1515,17 @@ footer {
   <div class="footer-mid">New Zealand Sotheby's International Realty &nbsp;·&nbsp; Waikato</div>
   <div class="footer-right">© 2026 Sotheby's International Realty</div>
 </footer>
-
+<!-- WhatsApp Floating Button -->
+<a 
+  href="https://wa.me/64274363531" 
+  class="whatsapp-float"
+  target="_blank"
+  aria-label="Chat on WhatsApp"
+>
+  <svg viewBox="0 0 32 32">
+    <path d="M19.11 17.23c-.29-.14-1.7-.84-1.96-.93-.26-.1-.45-.14-.64.14-.19.29-.74.93-.91 1.12-.17.19-.34.22-.63.08-.29-.14-1.2-.44-2.29-1.39-.84-.75-1.41-1.68-1.57-1.97-.17-.29-.02-.44.12-.58.13-.13.29-.34.43-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.14-.64-1.54-.88-2.11-.23-.55-.47-.48-.64-.49l-.55-.01c-.19 0-.5.07-.76.36-.26.29-1 1-.1 2.43.9 1.43 1.29 2.81 2.78 4.08 1.49 1.27 2.23 1.69 3.31 2.01 1.08.32 2.06.27 2.84.16.47-.07 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.33zM16.03 3C8.84 3 3 8.74 3 15.82c0 2.49.73 4.82 2 6.79L3 29l6.6-1.92c1.88 1.02 4.03 1.61 6.43 1.61 7.19 0 13.03-5.74 13.03-12.82C29.06 8.74 23.22 3 16.03 3zm0 23.38c-2.08 0-4.01-.56-5.68-1.53l-.41-.24-3.92 1.14 1.18-3.8-.27-.39a10.4 10.4 0 0 1-1.67-5.74c0-5.78 4.8-10.48 10.77-10.48 5.94 0 10.77 4.7 10.77 10.48 0 5.78-4.83 10.56-10.77 10.56z"/>
+  </svg>
+</a>
 <script>
   // Mobile drawer
   const drawer = document.getElementById('mobileDrawer');
